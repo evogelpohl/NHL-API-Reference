@@ -1325,10 +1325,10 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 - **Method**: GET
 - **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defensemen
-    - 'forwards' - Forwards
-    - 'defense' - Defensemen
+    - 'F' - Forwards
+    - 'D' - Defensemen
   - `sort-by` (str) - String
     - 'sog' - Shots on Goal
     - 'goals' - Goals
@@ -1345,7 +1345,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/forwards/goals/all/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/F/goals/all/now"
 ```
 
 #### Team Shot Location - Detail
@@ -1601,10 +1601,10 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-detail/8482116/2
 - **Method**: GET
 - **Description**: Presumably top 10 skaters based on the specified filters. 
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defensemen
-    - 'forwards' - Forwards
-    - 'defense' - Defensemen
+    - 'F' - Forwards
+    - 'D' - Defensemen
   - `sort-by` (str) - String
     - 'sog' - Shots on Goal
     - 'goals' - Goals
@@ -1620,7 +1620,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-detail/8482116/2
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-location-top-10/forwards/goals/high/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-location-top-10/F/goals/high/now"
 ```
 
 #### Skater Shot Location - Detail
