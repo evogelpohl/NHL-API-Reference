@@ -1152,22 +1152,22 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-comparison/9/20242025/2"
 
 - **Endpoint**: `/v1/edge/team-skating-distance-top-10/{positions}/{strength}/{sort-by}/{season}{game-type}`; `/v1/edge/team-skating-distance-top-10/{positions}/{strength}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `strength` (str) - 
+  - `strength` (str) -
     - 'all' - All situations
+    - 'es' - Even-strength
     - 'pp' - Power-play
     - 'pk' - Penalty kill
-    - 'es' - Even-strength
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'total' - Total distance skated
-    - 'unknown' - Average distance skated per 60 - **TODO** 
-    - 'unknown' - Top distance skated in a game - **TODO** 
-    - 'unknown' - Top distance skated in a period - **TODO** 
+    - 'per-60' - Average distance skated per 60
+    - 'max-game' - Top distance skated in a game
+    - 'max-period' - Top distance skated in a period
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1175,7 +1175,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-comparison/9/20242025/2"
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-top-10/F/pp/{sort-by}/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-top-10/F/pp/max-game/now"
 ```
 
 #### Team Skating Distance - Detail
@@ -1426,20 +1426,20 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-comparison/8482116/20242025
 - **Method**: GET
 - **Description**: Retrieve top 10 skaters in skating distance based on the provided filters 
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `strength` (str) - 
+  - `strength` (str) -
     - 'all' - All situations
+    - 'es' - Even-strength
     - 'pp' - Power-play
     - 'pk' - Penalty kill
-    - 'es' - Even-strength
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'total' - Total distance skated
-    - 'unknown' - Average distance skated per 60 min
-    - 'unknown' - Top distance skated in a game
-    - 'unknown' - Top distance skated in a period
+    - 'per-60' - Average distance skated per 60 min
+    - 'max-game' - Top distance skated in a game
+    - 'max-period' - Top distance skated in a period
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1447,7 +1447,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-comparison/8482116/20242025
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/skater-distance-top-10/D/all/total/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-distance-top-10/D/pp/total/now"
 ```
 
 #### Skater Skating Distance - Detail
