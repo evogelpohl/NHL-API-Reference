@@ -1282,16 +1282,18 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-zone-time-details/9/20242025/
 
 - **Endpoint**: `/v1/edge/team-shot-speed-top-10/{positions}/{sort-by}/{season}/{game-type}`; `/v1/edge/team-shot-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'max' - Maximum shot speed
-    - 'unknown' - 100+ mph - **TODO** 
-    - 'unknown' - 90+ mph - **TODO** 
+    - 'over-100' - 100+ mph
+    - '90-99' - 90-99 mph
+    - '80-89' - 80-89 mph
+    - '70-79' - 70-79 mph
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1299,7 +1301,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-zone-time-details/9/20242025/
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-top-10/F/{sort-by}/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-top-10/forwards/90-99/now"
 ```
 
 #### Team Shot Speed - Detail
@@ -1558,16 +1560,18 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-zone-time/8482116/20242025/
 
 - **Endpoint**: `/v1/edge/skater-shot-speed-top-10/{positions}/{sort-by}/{season}/{game-type}`; `/v1/edge/skater-shot-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve 10 players with the fastest shot based on the provided filters. 
+- **Description**: Retrieve 10 players with the fastest shot based on the provided filters.
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'max' - Max skating speed
-    - 'unknown' - 100+ mph
-    - 'unknown' - 90+ mph
+    - 'over-100' - 100+ mph
+    - '90-99' - 90-99 mph
+    - '80-89' - 80-89 mph
+    - '70-79' - 70-79 mph
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1575,7 +1579,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-zone-time/8482116/20242025/
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-top-10/F/max/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-top-10/F/over-100/now"
 ```
 
 #### Skater Shot Speed - Detail
