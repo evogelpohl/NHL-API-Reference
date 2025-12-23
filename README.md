@@ -1199,16 +1199,17 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-detail/9/202
 
 - **Endpoint**: `/v1/edge/team-skating-speed-top-10/{position}/{sort-by}/{season}/{game-type}`; `v1/edge/team-skating-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'max' - Max skating speed
-    - 'unknown' - 22 mph+ bursts
-    - 'unknown' - 20 mph+ bursts
+    - 'over-22' - 22 mph+ bursts
+    - '20-22' - 20-22 mph bursts
+    - '18-20' - 18-20 mph bursts
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1216,7 +1217,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-detail/9/202
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-speed-top-10/F/max/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-speed-top-10/F/20-22/now"
 ```
 
 #### Team Skating Speed - Detail
@@ -1321,10 +1322,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 
 #### Team Shot Location - Top 10
 
-- **Endpoint**: `/v1/edge/team-shot-location-top-10/{position}/{sort-by}/{category}/{season}/{game-type}`; `/v1/edge/team-shot-location-top-10/{position}/{sort-by}/{category}/now`
+- **Endpoint**: `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data
+- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
 - **Parameters**:
+<<<<<<< HEAD
   - `position` (str) -
     - 'all' - Forwards and Defensemen
     - 'F' - Forwards
@@ -1338,6 +1340,21 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
     - 'high' - High-Danger
     - 'mid' - Mid-Range
     - 'long' - Long-Range
+=======
+  - `position` (str) - 
+    - 'all' - Forwards and Defense
+    - 'F' - Forwards
+    - 'D' - Defense
+  - `category` (str)  - **TODO** 
+    - 'unknown' - All Locations
+    - 'unknown' - High-Danger
+    - 'unknown' - Mid-Range
+    - 'unknown' - Long-Range
+  - `sort-by` (str) - String - **TODO** 
+    - 'unknown' - Shots on Goal
+    - 'unknown' - Goals
+    - 'unknown' - Shooting Percentage
+>>>>>>> pr-78
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1345,7 +1362,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 ###### Example using cURL:
 
 ```bash
+<<<<<<< HEAD
 curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/F/goals/all/now"
+=======
+curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-location-top-10/F/{category}/{sort-by}/20242025/2"
+>>>>>>> pr-78
 ```
 
 #### Team Shot Location - Detail
@@ -1471,16 +1492,17 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
 
 - **Endpoint**: `/v1/edge/skater-speed-top-10/{positions}/{sort-by}/{season}/{game-type}`; `/v1/edge/skater-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve 10 fastest skaters based on the provided filters. 
+- **Description**: Retrieve 10 fastest skaters based on the provided filters.
 - **Parameters**:
-  - `position` (str) - 
+  - `position` (str) -
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String
     - 'max' - Max skating speed
-    - 'unknown' - 22 mph+ bursts
-    - 'unknown' - 20 mph+ bursts
+    - 'over-22' - 22 mph+ bursts
+    - '20-22' - 20-22 mph bursts
+    - '18-20' - 18-20 mph bursts
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1488,7 +1510,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/skater-speed-top-10/F/max/20242025/2"
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-speed-top-10/F/over-22/now"
 ```
 
 #### Skater Skating Speed - Detail
@@ -1597,10 +1619,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-detail/8482116/2
 
 #### Skater Shot Location - Top 10
 
-- **Endpoint**: `/v1/edge/skater-shot-location-top-10/{position}/{sort-by}/{category}/{season}/{game-type}`; `/v1/edge/skater-shot-location-top-10/{position}/{sort-by}/{category}/now`
+- **Endpoint**: `/v1/edge/skater-shot-location-top-10/{position}/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/skater-shot-location-top-10/{position}/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Presumably top 10 skaters based on the specified filters. 
+- **Description**: Presumably top 10 skaters based on the specified filters. -**TODO**
 - **Parameters**:
+<<<<<<< HEAD
   - `position` (str) -
     - 'all' - Forwards and Defensemen
     - 'F' - Forwards
@@ -1614,13 +1637,33 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-detail/8482116/2
     - 'high' - High-Danger
     - 'mid' - Mid-Range
     - 'long' - Long-Range
+=======
+  - `position` (str) - 
+    - 'all' - Forwards and Defense
+    - 'F' - Forwards
+    - 'D' - Defense
+  - `category` (str)  - **TODO** 
+    - 'unknown' - All Locations
+    - 'unknown' - High-Danger
+    - 'unknown' - Mid-Range
+    - 'unknown' - Long-Range
+  - `sort-by` (str) - String - **TODO** 
+    - 'unknown' - Shots on Goal
+    - 'unknown' - Goals
+    - 'unknown' - Shooting Percentage
+>>>>>>> pr-78
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
+- **Response**: JSON format
 
 ###### Example using cURL:
 
 ```bash
+<<<<<<< HEAD
 curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-location-top-10/F/goals/high/now"
+=======
+curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-location-top-10/F/{category}/{sort-by}/20242025/2"
+>>>>>>> pr-78
 ```
 
 #### Skater Shot Location - Detail
@@ -1747,20 +1790,20 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-5v5-detail/8476999/20242025
 
 #### Goalie Shot Location - Top 10
 
-- **Endpoint**: `/v1/edge/goalie-shot-location-top-10/{sort-by}/{category}/{season}/{game-type}`; `/v1/edge/goalie-shot-location-top-10/{sort-by}/{category}/now`
+- **Endpoint**: `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Presumably top 10 goalies based on the specified filters.
+- **Description**: Presumably top 10 goalies based on the specified filters. -**TODO**
 - **Parameters**:
-  - `category` (str)
-    - 'all' - All Locations
-    - 'high' - High-Danger
-    - 'mid' - Mid-Range
-    - 'long' - Long-Range
-  - `sort-by` (str) - String
-    - 'save-pctg' - Save %
-    - 'saves' - Saves
-    - 'shots-against' - Shots Against
-    - 'goals-against' - Goals Against
+  - `category` (str)  - **TODO** 
+    - 'unknown' - All Locations
+    - 'unknown' - High-Danger
+    - 'unknown' - Mid-Range
+    - 'unknown' - Long-Range
+  - `sort-by` (str) - String - **TODO** 
+    - 'unknown' - Shots Against
+    - 'unknown' - Saves
+    - 'unknown' - Goals Against
+    - 'unknown' - Save %
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1768,7 +1811,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-5v5-detail/8476999/20242025
 ###### Example using cURL:
 
 ```bash
-curl -X GET "https://api-web.nhle.com/v1/edge/goalie-shot-location-top-10/save-pctg/all/now"
+curl -X GET "https://api-web.nhle.com/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/20242025/2"
 ```
 
 #### Goalie Shot Location - Detail
